@@ -1,6 +1,8 @@
 # Haven Earthmovers
 
-Haven Earthmovers operator-training website, designed and developed by Jaeger Media. Responsive editorial design, 13-course machine explorer, course-specific WhatsApp enquiries, location directions and FAQs.
+Haven Earthmovers operator-training website, designed and developed by Jaeger Media. Responsive editorial design, interactive featured-machine display, 13-course machine explorer, course-specific WhatsApp enquiries, location directions and FAQs.
+
+The refined homepage uses sentence-case DM Sans headings capped at 48px on desktop and 36px on mobile, readable body text and an equipment-led composition. The featured excavator, mobile crane and forklift controls update the image, fee and linked course. Section headings use a restrained 30–46px range instead of oversized slogans.
 
 ## Local preview
 

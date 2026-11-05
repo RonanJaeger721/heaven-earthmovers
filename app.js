@@ -14,6 +14,19 @@ const courses=[
  {name:'Drill rig',price:450,group:'lift',image:'drill-rig',description:'Take a closer look at drill rig operator training.'}
 ];
 const groupNames={earth:'EARTHMOVING',lift:'LIFTING & DRILLING',road:'ROAD & TRANSPORT'};
+const heroButtons=[...document.querySelectorAll('[data-machine]')];
+function showHeroMachine(button){
+ const index=Number(button.dataset.machine),course=courses[index],image=document.querySelector('#hero-machine-image');
+ heroButtons.forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button))});
+ image.src=`assets/${course.image}${index===1?'':'-illustration'}.webp`;image.alt=`Illustrative ${course.name.toLowerCase()}`;image.classList.toggle('hero-product',index!==1);
+ document.querySelector('#hero-machine-name').textContent=course.name;document.querySelector('#hero-machine-fee').textContent=`$${course.price}`;
+ document.querySelector('#hero-index').textContent=`0${heroButtons.indexOf(button)+1} / 03`;
+ document.querySelector('#hero-course-link').setAttribute('aria-label',`Explore ${course.name.toLowerCase()} course`);
+ document.querySelector('#hero-course-link').dataset.course=String(index);
+ if(!matchMedia('(prefers-reduced-motion: reduce)').matches)image.animate([{opacity:.2,transform:'translateX(14px)'},{opacity:1,transform:'translateX(0)'}],{duration:380,easing:'cubic-bezier(.2,.7,.2,1)'});
+}
+heroButtons.forEach(button=>button.addEventListener('click',()=>showHeroMachine(button)));
+document.querySelector('#hero-course-link').addEventListener('click',e=>{filter='all';document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter==='all';b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});choose(Number(e.currentTarget.dataset.course??1))});
 let selected=1,filter='all';
 const list=document.querySelector('#course-list'),select=document.querySelector('#course-select');
 courses.forEach((c,i)=>{const o=document.createElement('option');o.value=c.name;o.textContent=`${c.name} — $${c.price}`;select.append(o)});
