@@ -11,3 +11,25 @@ const parts={boom:'BOOM & BUCKET / REACH, DIG AND MOVE MATERIAL',cab:'OPERATOR�
 document.querySelectorAll('.part-hotspot').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.part-hotspot').forEach(t=>{t.classList.toggle('active',t===b);t.setAttribute('aria-pressed',String(t===b))});anatomy.dataset.part=b.dataset.part;document.querySelector('#part-caption').textContent=parts[b.dataset.part]}));
 document.querySelector('#story-action').addEventListener('click',()=>{filter='all';document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter==='all';b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});choose(1)});
 setScene(reduced.matches?1:0);updateStory();
+
+// A single camera push into the steelwork, with an intentional resting frame.
+const filmHero=document.querySelector('.cinema-hero'),filmImage=document.querySelector('.cinema-world img');
+const motionButton=document.createElement('button');motionButton.className='hero-motion';motionButton.type='button';motionButton.textContent='Ⅱ  Pause motion';motionButton.setAttribute('aria-label','Pause hero image zoom');filmHero.append(motionButton);
+let cameraMove=null,userPaused=false;
+function createCameraMove(){
+ cameraMove?.cancel();
+ if(reduced.matches){motionButton.hidden=true;filmHero.dataset.motion='still';return}
+ motionButton.hidden=false;userPaused=false;filmHero.dataset.motion='playing';motionButton.textContent='Ⅱ  Pause motion';motionButton.setAttribute('aria-label','Pause hero image zoom');
+ const small=mobileStory.matches;
+ cameraMove=filmImage.animate([{transform:`scale(${small?1:1.025})`},{transform:`scale(${small?1.075:1.16})`}],{duration:small?8500:10000,easing:'cubic-bezier(.16,.4,.3,1)',fill:'forwards'});
+ cameraMove.onfinish=()=>{filmHero.dataset.motion='finished';motionButton.textContent='↻  Replay motion';motionButton.setAttribute('aria-label','Replay hero image zoom')};
+}
+motionButton.addEventListener('click',()=>{
+ if(!cameraMove||cameraMove.playState==='finished'){createCameraMove();return}
+ userPaused=!userPaused;
+ if(userPaused){cameraMove.pause();filmHero.dataset.motion='paused';motionButton.textContent='▷  Resume motion';motionButton.setAttribute('aria-label','Resume hero image zoom')}
+ else{cameraMove.play();filmHero.dataset.motion='playing';motionButton.textContent='Ⅱ  Pause motion';motionButton.setAttribute('aria-label','Pause hero image zoom')}
+});
+new IntersectionObserver(([entry])=>{if(!cameraMove||userPaused||cameraMove.playState==='finished')return;if(entry.isIntersecting&&!document.hidden)cameraMove.play();else cameraMove.pause()},{threshold:.08}).observe(filmHero);
+document.addEventListener('visibilitychange',()=>{if(!cameraMove||userPaused||cameraMove.playState==='finished')return;if(document.hidden)cameraMove.pause();else if(filmHero.getBoundingClientRect().bottom>0)cameraMove.play()});
+reduced.addEventListener('change',createCameraMove);createCameraMove();
