@@ -1,8 +1,8 @@
 # Haven Earthmovers
 
-Haven Earthmovers operator-training website, designed and developed by Jaeger Media. Responsive editorial design, interactive featured-machine display, 13-course machine explorer, course-specific WhatsApp enquiries, location directions and FAQs.
+Haven Earthmovers operator-training website, designed and developed by Jaeger Media. Responsive editorial design, cinematic opening and interactive machine story, 13-course machine explorer, course-specific WhatsApp enquiries, location directions and FAQs.
 
-The refined homepage uses sentence-case DM Sans headings capped at 48px on desktop and 36px on mobile, readable body text and an equipment-led composition. The featured excavator, mobile crane and forklift controls update the image, fee and linked course. Section headings use a restrained 30–46px range instead of oversized slogans.
+The opening uses a generated dawn scene, compact typography and scroll-linked environmental depth. A three-stage outline-to-machine story follows, with tappable boom, cab and track labels, then a handoff into excavator training. Mobile uses tap-controlled stages instead of long pinning. See DESIGN-DIRECTION.md for the considered concepts, chosen Jaeger methods and provenance.
 
 ## Local preview
 
@@ -16,7 +16,7 @@ Run `npm run check` and `npm run build`. The static website is emitted into `dis
 
 Course names, prices, benefits, contacts and addresses come from the supplied Haven flyer, available on the site. The flyer uses `$` without specifying currency. “Series roller” preserves the original wording. Current fees, currency, intake dates, enrolment requirements, training locations and certificate recognition should be confirmed with Haven.
 
-The brand mark is cropped from the flyer. Machine visuals are AI-generated illustrations, explicitly labelled, and do not represent Haven’s actual fleet or facilities. No testimonials, job guarantees or unverifiable statistics have been added.
+The brand mark is cropped from the flyer. The dawn scene and machine visuals are AI-generated illustrations, explicitly labelled, and do not represent Haven’s actual fleet or facilities. No testimonials, job guarantees or unverifiable statistics have been added.
 
 The enquiry form prepares a message to +263784125509. Visitors review and send it in WhatsApp; the website does not store enquiries. The second telephone contact is +263719784708.
 

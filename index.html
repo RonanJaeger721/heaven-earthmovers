@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="design.css"><script src="app.js" defer></script>
+  <link rel="stylesheet" href="design.css"><link rel="stylesheet" href="cinema.css"><script src="app.js" defer></script><script src="experience.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -20,25 +20,24 @@
  <a class="nav-cta" href="#enquire">Enquire now <span>↗</span></a><button class="menu" aria-label="Open navigation" aria-controls="nav" aria-expanded="false"><span></span><span></span></button>
 </header>
 <main id="main">
- <section class="hero" aria-labelledby="hero-title">
- <div class="hero-copy">
-  <p class="eyebrow"><span></span> HAVEN OPERATOR TRAINING</p>
-  <h1 id="hero-title">Your next move.<br><em>Take the controls.</em></h1>
-  <p class="hero-description">Build your skills around the machines that move the world. Explore 13 operator training courses with Haven Earthmovers.</p>
-  <div class="hero-actions"><a class="button blue" href="#courses">Explore the courses <span>↗</span></a><a class="hero-contact" href="#enquire">Talk to Haven <span>↗</span></a></div>
-  <div class="hero-facts"><div><strong>02</strong><span>weeks of training</span></div><div><strong>13</strong><span>machines to explore</span></div></div>
-  <div class="hero-locations"><span class="signal"></span> Bulawayo & Harare <span>/ Zimbabwe</span></div>
- </div>
- <div class="hero-showcase">
-  <div class="showcase-top"><span><i></i> THE HAVEN MACHINE FILES</span><span id="hero-index">01 / 03</span></div>
-  <div class="showcase-visual">
-   <svg class="machine-orbit" viewBox="0 0 640 430" aria-hidden="true"><ellipse cx="330" cy="245" rx="246" ry="147"/><ellipse cx="330" cy="245" rx="222" ry="127" stroke-dasharray="2 8"/><path d="M30 245h580M330 55v350"/><path class="orbit-accent" d="M84 245a246 147 0 0 1 246-147"/><path d="M75 95h18m-9-9v18M570 346h18m-9-9v18"/></svg>
-   <div class="showcase-axis" aria-hidden="true">H / 01</div>
-   <img id="hero-machine-image" src="assets/excavator-isolated.webp" alt="Illustrative yellow excavator" width="1200" height="800" fetchpriority="high">
-   <span class="image-disclosure">ILLUSTRATIVE EQUIPMENT VISUAL</span>
+ <section class="cinema-hero" aria-labelledby="hero-title">
+ <div class="cinema-world"><img src="assets/haven-dawn.webp" alt="Illustrative excavator at an earthmoving site at dawn" width="1536" height="1024" fetchpriority="high"></div>
+ <div class="cinema-shade"></div><div class="hero-rail" aria-hidden="true"><span>H / OPERATOR TRAINING</span><span>ESTABLISH YOUR NEXT CHAPTER</span></div>
+ <div class="cinema-copy"><p class="eyebrow"><span></span> HAVEN EARTHMOVERS · ZIMBABWE</p><h1 id="hero-title">Some see a machine.<br><em>You see your future.</em></h1><p>Machinery operator training in Zimbabwe.<br>Your next chapter starts at the controls.</p><a class="button" href="#machine-story">Step into the operator’s world <span>↗</span></a></div>
+ <div class="cinema-bottom"><a href="#machine-story" class="scroll-cue"><span class="scroll-track"></span><span>THERE’S MORE BENEATH THE SURFACE<br><b>Scroll to discover</b></span></a><div class="hero-caption"><span>01 / EARTHMOVING</span><p>Power. Precision. Possibility.</p><small>ILLUSTRATIVE SCENE</small></div></div>
+ <div class="hero-edge" aria-hidden="true"></div>
+</section>
+<section id="machine-story" class="machine-story" aria-label="Discover the machine">
+ <div class="story-sticky">
+  <div class="story-top"><span>01 / UNDERSTAND THE POSSIBILITY</span><span>HAVEN / EXCAVATOR</span></div>
+  <div class="story-copy"><p class="eyebrow" id="story-kicker">01 — THE POWER</p><h2 id="story-title">More than metal.<br><span>A skill to build on.</span></h2><p id="story-description">Behind every movement is an operator. Discover the machine, then explore where training could take you.</p><a class="text-link" id="story-action" href="#courses">Explore excavator training <span>↗</span></a></div>
+  <div class="anatomy" data-part="all"><div class="anatomy-grid"></div><div class="anatomy-orbit" aria-hidden="true"></div>
+   <svg class="machine-outline" viewBox="0 0 800 530" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M199 394 251 378 582 378 639 397 633 437 599 454 250 454 211 437Z M229 407h387M256 428h324 M271 389l-24 49M314 389l-15 49M360 389v49M410 389v49M461 389v49M510 389l12 49M560 389l22 49 M386 375l-19-80 35-19 75 3 21 91 M398 286l12-101 78-8 24 114 M415 199l-5 69 76 3-10-77Z M493 291l105 12 16 58-114 9 M391 279 293 130 251 94 225 107 187 258 140 347 M250 119l-32 151-50 90 M283 135l91 149 M137 345l-44 25-10 51 56 27 63-9-38-75Z M96 411l83 20 M252 105l31 30M224 108l27 13"/><path stroke-dasharray="4 7" d="M53 474h655M53 58v416M697 58v416"/></g></svg>
+   <div class="anatomy-photo"><img src="assets/excavator-isolated.webp" alt="Illustrative excavator with its bucket, cab and tracks available to inspect" width="1440" height="960" loading="lazy"></div>
+   <button class="part-hotspot part-boom" data-part="boom" aria-label="Inspect boom and bucket"><span>+</span><b>Boom & bucket</b></button><button class="part-hotspot part-cab" data-part="cab" aria-label="Inspect operator’s cab"><span>+</span><b>Operator’s cab</b></button><button class="part-hotspot part-tracks" data-part="tracks" aria-label="Inspect tracks"><span>+</span><b>Tracks</b></button>
+   <div class="anatomy-caption"><span id="part-caption" role="status">THE OUTLINE OF A NEW DIRECTION</span><span>ILLUSTRATIVE VISUAL</span></div>
   </div>
-  <div class="showcase-spec"><div><span class="spec-label">IN FOCUS</span><h2 id="hero-machine-name">Excavator</h2></div><div class="showcase-fee"><span class="spec-label">ADVERTISED COURSE FEE</span><strong id="hero-machine-fee">$170</strong></div><a id="hero-course-link" href="#courses" aria-label="Explore excavator course">↗</a></div>
-  <div class="showcase-controls" role="group" aria-label="Featured machines"><button data-machine="1" class="active" aria-pressed="true"><span>01</span> Excavator</button><button data-machine="0" aria-pressed="false"><span>02</span> Mobile crane</button><button data-machine="11" aria-pressed="false"><span>03</span> Forklift</button></div>
+  <div class="story-progress" role="group" aria-label="Machine story stages"><button class="active" data-scene="0" aria-pressed="true"><span>01</span> The power<i></i></button><button data-scene="1" aria-pressed="false"><span>02</span> The precision<i></i></button><button data-scene="2" aria-pressed="false"><span>03</span> The possibility<i></i></button></div>
  </div>
 </section>
  <section class="benefit-strip" aria-label="Training at a glance"><div><strong>02</strong><span>WEEKS OF<br>TRAINING</span></div><div><span class="strip-icon">↗</span><span>FOOD & ACCOMMODATION<br><b>INCLUDED FREE</b></span></div><div><span class="strip-icon">▤</span><span>OPERATOR’S ID & MANUAL<br><b>INCLUDED FREE</b></span></div><a href="#enquire">YOUR AMBITION.<br><b>LET’S PUT IT TO WORK. ↗</b></a></section>
